@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GetTheMiddleCharacter.cs" />
+    <Compile Include="HighestAndLowest.cs" />
     <Compile Include="HowManyVowels.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

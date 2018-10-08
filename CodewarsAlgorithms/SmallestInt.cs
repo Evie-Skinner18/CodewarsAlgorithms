@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CodewarsAlgorithms
 {
-    class SmallestInt
+    public class SmallestInt
     {
-        public static int FindSmallestInt(int[] args)
+        public int FindSmallestInt(int[] args)
         {
             return args.Min();
 
