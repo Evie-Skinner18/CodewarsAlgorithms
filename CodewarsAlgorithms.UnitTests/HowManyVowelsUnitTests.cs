@@ -1,6 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
-using CodewarsAlgorithms;
+//using CodewarsAlgorithms;
 
 namespace CodewarsAlgorithms.UnitTests
 {
@@ -14,6 +14,14 @@ namespace CodewarsAlgorithms.UnitTests
             var kata = new Kata();
             var result = kata.GetVowelCount("Evie");
             Assert.AreEqual(3, result);
+        }
+
+        [Test]
+        public void CanGetVowelCountOfStringABRACADABRA_ShouldReturn5()
+        {
+            var kata = new Kata();
+            var result = kata.GetVowelCount("ABRACADABRA");
+            Assert.AreEqual(5, result);
         }
     }
 }
