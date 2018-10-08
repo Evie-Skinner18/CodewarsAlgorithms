@@ -15,11 +15,12 @@ namespace CodewarsAlgorithms
 
             if (s.Length % 2 == 0)
             {
-                return s[s.Length / 2 - 1] + s[s.Length / 2];
+                return s.Split()[middle];
+                    //s[s.Length / 2 - 1] + s[s.Length / 2];
             }
             else
             {
-                return s[s.Length / 2];
+                return s.Split()[0];
             }
                     // if odd, rtn the char at index letters.Length / 2.
             
