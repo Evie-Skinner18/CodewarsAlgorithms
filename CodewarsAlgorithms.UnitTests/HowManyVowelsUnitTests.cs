@@ -23,5 +23,21 @@ namespace CodewarsAlgorithms.UnitTests
             var result = kata.GetVowelCount("ABRACADABRA");
             Assert.AreEqual(5, result);
         }
+
+        [Test]
+        public void CanGetVowelCountOfStringContainingAlphanumericCharactersAndSpaces_ShouldReturn12()
+        {
+            var kata = new Kata();
+            var result = kata.GetVowelCount("1,2,3,4,5. Senses working oooooverrrtime!");
+            Assert.That(result == 12, Is.True);
+        }
+
+        [Test]
+        public void CanGetVowelCountOfemptyString_ShouldReturn0()
+        {
+            var kata = new Kata();
+            var result = kata.GetVowelCount("");
+            Assert.That(result, Is.EqualTo(0));
+        }
     }
 }
