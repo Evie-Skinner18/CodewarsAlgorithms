@@ -9,7 +9,7 @@ namespace CodewarsAlgorithms
 
         public class Kata
         {
-            public static int GetVowelCount(string str)
+            public int GetVowelCount(string str)
             {
                 int vowelCount = 0;
 
@@ -28,4 +28,4 @@ namespace CodewarsAlgorithms
             }
         }
 
-    }
+ }

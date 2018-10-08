@@ -10,6 +10,7 @@ namespace CodewarsAlgorithms
     {
         static void Main(string[] args)
         {
+
             
         }
     }
