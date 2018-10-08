@@ -6,16 +6,22 @@ using System.Threading.Tasks;
 
 namespace CodewarsAlgorithms
 {
-    class GetTheMiddleCharacter
+    public class GetTheMiddleCharacter
     {
         public string GetMiddle(string s)
         {
-            string middle = "";
-            var letters = s.ToCharArray();
-            for(int i = 0; i < letters.Length; i++)
+            //var letters = s.ToCharArray();
+            int middle = s.Length / 2;
+
+            if (s.Length % 2 == 0)
             {
-                letters.Length % 2 == 0? middle = 
-                    // if odd, rtn the char at index letters.Length / 2.
+                return s[s.Length / 2 - 1] + s[s.Length / 2];
             }
+            else
+            {
+                return s[s.Length / 2];
+            }
+                    // if odd, rtn the char at index letters.Length / 2.
+            
     }
 }
