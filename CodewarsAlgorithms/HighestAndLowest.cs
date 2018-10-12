@@ -11,17 +11,17 @@ namespace CodewarsAlgorithms
         public string HighAndLow(string numbers)
         {
             // Code here or
-            var nums = Int32.Parse(numbers);
-            int[] ints = nums
-            char[] characters = numbers.ToCharArray();
-            
+            //var nums = Int32.Parse(numbers);
+            //int[] ints = nums;
+            //int oneLongInt = Int32.Parse(numbers);
+            //int[] intNums = oneLongInt.
 
-            foreach(char c in characters)
+            string[] stringNums = numbers.Split(' ');
+
+
+            foreach (string stringNum in stringNums)
             {
-               if( c != '')
-                {
-                    var number = Char.GetNumericValue(c);
-                }
+                Int32.Parse(stringNum);
             }
             return "throw towel";
         }
