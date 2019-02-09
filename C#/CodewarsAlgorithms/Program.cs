@@ -11,9 +11,12 @@ namespace CodewarsAlgorithms
         static void Main(string[] args)
         {
 
-            var kata = new HighestAndLowest();
-            
-            Console.WriteLine(kata.HighAndLow("2 8 55 -40"));
+            //var kata = new HighestAndLowest();
+
+            //Console.WriteLine(kata.HighAndLow("2 8 55 -40"));
+
+            var kata = new Number();
+            Console.WriteLine(kata.DigitalRoot(456));
 
         }
     }

@@ -13,6 +13,7 @@ namespace CodewarsAlgorithms.UnitTests
         {
             var kata = new Kata();
             var result = kata.GetVowelCount("Evie");
+			Assert.That(result, Is.Not.Null);
             Assert.AreEqual(3, result);
         }
 
