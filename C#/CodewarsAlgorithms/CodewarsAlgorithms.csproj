@@ -51,6 +51,7 @@
     <Compile Include="MinMax.cs" />
     <Compile Include="RomanNumerals.cs" />
     <Compile Include="Number.cs" />
+    <Compile Include="DigitalRoot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
