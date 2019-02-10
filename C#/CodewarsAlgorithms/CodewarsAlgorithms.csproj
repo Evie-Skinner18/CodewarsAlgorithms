@@ -52,6 +52,7 @@
     <Compile Include="RomanNumerals.cs" />
     <Compile Include="Number.cs" />
     <Compile Include="DigitalRoot.cs" />
+    <Compile Include="HighestScoringWord.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
