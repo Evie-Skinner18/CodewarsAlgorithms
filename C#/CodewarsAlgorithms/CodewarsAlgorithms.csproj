@@ -53,6 +53,7 @@
     <Compile Include="Number.cs" />
     <Compile Include="DigitalRoot.cs" />
     <Compile Include="HighestScoringWord.cs" />
+    <Compile Include="WeirdCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

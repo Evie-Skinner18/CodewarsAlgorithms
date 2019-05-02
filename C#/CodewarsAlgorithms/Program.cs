@@ -12,7 +12,10 @@ namespace CodewarsAlgorithms
         {
 
           
-            Console.WriteLine(HighestScoringWord.CalculateHighestScoringWord("pip doggie flangella vinyl"));
+            //Console.WriteLine(HighestScoringWord.CalculateHighestScoringWord("pip doggie flangella vinyl"));
+            var weirdString = new WeirdCase();
+            Console.WriteLine(weirdString.ToWeirdCase("nelly"));
+            Console.ReadKey();
 
         }
     }
