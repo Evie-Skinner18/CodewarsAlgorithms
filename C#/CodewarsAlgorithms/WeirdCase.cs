@@ -15,25 +15,25 @@ public class WeirdCase
         var indicesOfThisChar = new List<int>();
         
 
-        foreach (var ch in stringList)
-        {
-            //charsOfThisIndex.Add(stringList[stringList.IndexOf(c)]);
-            charsOfThisIndex = stringList.FindAll(character => character.Equals(ch));
-            numberOfAppearances = charsOfThisIndex.Count();
+        //foreach (var ch in stringList)
+        //{
+        //    //charsOfThisIndex.Add(stringList[stringList.IndexOf(c)]);
+        //    charsOfThisIndex = stringList.FindAll(character => character.Equals(ch));
+        //    numberOfAppearances = charsOfThisIndex.Count();
 
-            if (numberOfAppearances > 1)
-            {
-                var n = stringList.IndexOf(ch);
-                var result = stringList
-                    .Select((c, i) => new { c, i })
-                    .Where(x => x.c == ch)
-                    .Skip(1)
-                    .FirstOrDefault();
+        //    if (numberOfAppearances > 1)
+        //    {
+        //        var n = stringList.IndexOf(ch);
+        //        var result = stringList
+        //            .Select((c, i) => new { c, i })
+        //            .Where(x => x.c == ch)
+        //            .Skip(1)
+        //            .FirstOrDefault();
 
 
-                 //return result != null ? result.i : -1;
-                stringBuilder.Append(result.i % 2 == 0 ? result.c.ToString().ToUpper() : result.c.ToString().ToLower());
-            }
+        //         //return result != null ? result.i : -1;
+        //        stringBuilder.Append(result.i % 2 == 0 ? result.c.ToString().ToUpper() : result.c.ToString().ToLower());
+        //    }
             //indicesOfThisChar.Add(c);
 
             //if (numberOfAppearances > 1)
@@ -61,9 +61,8 @@ public class WeirdCase
             //}
 
 
-            stringBuilder.Append(stringList.IndexOf(ch) % 2 == 0 ? ch.ToString().ToUpper() : ch.ToString().ToLower());
 
-        }
+        //}
 
         return stringBuilder.ToString();
     }
