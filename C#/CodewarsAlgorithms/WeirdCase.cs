@@ -28,11 +28,19 @@ public class WeirdCase
 
                 foreach (var letterGroup in duplicates)
                 {
-                    foreach (var letter in letterGroup)
+                    foreach (var currentLetter in letterGroup)
                     {
-                        stringBuilder.Append(letter.Index % 2 == 0 ? letter.Text.ToString().ToUpper() : letter.Text.ToString().ToLower());
+                        stringBuilder.Append(currentLetter.Index % 2 == 0 ? currentLetter.Text.ToString().ToUpper() : currentLetter.Text.ToString().ToLower());
                     }
                 }
+
+
+
+                //foreach (var letterGroup in duplicates)
+                //{
+                //    var currentLetter = duplicates.GetEnumerator().Current.GetEnumerator().Current;
+                //    stringBuilder.Append(currentLetter.Index % 2 == 0 ? currentLetter.Text.ToString().ToUpper() : currentLetter.Text.ToString().ToLower());
+                //}
             }
 
             stringBuilder.Append(stringList.IndexOf(ch) % 2 == 0 ? ch.ToString().ToUpper() : ch.ToString().ToLower());

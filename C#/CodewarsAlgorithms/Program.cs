@@ -14,7 +14,7 @@ namespace CodewarsAlgorithms
           
             //Console.WriteLine(HighestScoringWord.CalculateHighestScoringWord("pip doggie flangella vinyl"));
             var weirdString = new WeirdCase();
-            Console.WriteLine(weirdString.ToWeirdCase("nelly"));
+            Console.WriteLine(weirdString.ToWeirdCase("I am a Dibwiss"));
             Console.ReadKey();
 
         }
