@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -21,16 +22,24 @@ public class WeirdCase
             charsOfThisIndex = stringList.FindAll(character => character.Equals(ch));
             numberOfAppearances = charsOfThisIndex.Count();
 
-            if (numberOfAppearances > 1)
+            if (ch.ToString().Equals(" "))
             {
-                var duplicates = stringList.Select((t, i) => new { Index = i, Text = t })
+                stringBuilder.Append(ch);
+            }
+
+            if (numberOfAppearances > 1 && ch.ToString() != " ")
+            {
+                var duplicates = stringList.Select((t, i) => new { Index = i, Text = t }).Where(t => t.Text.Equals(ch))
                     .GroupBy(g => g.Text).Where(g => g.Count() > 1);
 
                 foreach (var letterGroup in duplicates)
                 {
                     foreach (var currentLetter in letterGroup)
                     {
-                        stringBuilder.Append(currentLetter.Index % 2 == 0 ? currentLetter.Text.ToString().ToUpper() : currentLetter.Text.ToString().ToLower());
+                        if (currentLetter.Index == stringList.IndexOf(ch))
+                        {
+                            stringBuilder.Append(currentLetter.Index % 2 == 0 ? currentLetter.Text.ToString().ToUpper() : currentLetter.Text.ToString().ToLower());
+                        }
                     }
                 }
 
