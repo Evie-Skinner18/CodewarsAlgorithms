@@ -9,90 +9,46 @@ public class WeirdCase
 
     public string ToWeirdCase(string s)
     {
-        var stringList = s.ToList();
+        var stringList = s.Split(' ').ToList();
         var stringBuilder = new StringBuilder();
         var charsOfThisIndex = new List<char>();
         var numberOfAppearances = 0;
         var indicesOfThisChar = new List<int>();
+        var wordList = new List<char>();
 
 
-        foreach (var ch in stringList)
+        foreach (var word in stringList)
         {
-            //charsOfThisIndex.Add(stringList[stringList.IndexOf(c)]);
-            charsOfThisIndex = stringList.FindAll(character => character.Equals(ch));
-            numberOfAppearances = charsOfThisIndex.Count();
+            wordList = word.ToList();
 
-            if (ch.ToString().Equals(" "))
+            foreach (var ch in wordList)
             {
-                stringBuilder.Append(ch);
-            }
+                charsOfThisIndex = wordList.FindAll(character => character.Equals(ch));
+                numberOfAppearances = charsOfThisIndex.Count();
 
-            if (numberOfAppearances > 1 && ch.ToString() != " ")
-            {
-                var duplicates = stringList.Select((t, i) => new { Index = i, Text = t }).Where(t => t.Text.Equals(ch))
-                    .GroupBy(g => g.Text).Where(g => g.Count() > 1);
-
-                foreach (var letterGroup in duplicates)
+               if (numberOfAppearances > 1)
                 {
-                    foreach (var currentLetter in letterGroup)
+                    var duplicates = wordList.Select((t, i) => new { Index = i, Text = t }).Where(t => t.Text.Equals(ch))
+                        .GroupBy(g => g.Text).Where(g => g.Count() > 1);
+
+                    foreach (var letterGroup in duplicates)
                     {
-                        if (currentLetter.Index == stringList.IndexOf(ch))
+                        foreach (var currentLetter in letterGroup)
                         {
-                            stringBuilder.Append(currentLetter.Index % 2 == 0 ? currentLetter.Text.ToString().ToUpper() : currentLetter.Text.ToString().ToLower());
+                            if (currentLetter.Index % 2 == 0 && wordList.IndexOf(ch) % 2 == 0)
+                            {
+                                stringBuilder.Append(currentLetter.Text.ToString().ToUpper());
+                            }
+
+                            stringBuilder.Append(currentLetter.Text.ToString().ToLower());
                         }
                     }
                 }
 
-
-
-                //foreach (var letterGroup in duplicates)
-                //{
-                //    var currentLetter = duplicates.GetEnumerator().Current.GetEnumerator().Current;
-                //    stringBuilder.Append(currentLetter.Index % 2 == 0 ? currentLetter.Text.ToString().ToUpper() : currentLetter.Text.ToString().ToLower());
-                //}
+                stringBuilder.Append(wordList.IndexOf(ch) % 2 == 0 ? ch.ToString().ToUpper() : ch.ToString().ToLower());
             }
 
-            stringBuilder.Append(stringList.IndexOf(ch) % 2 == 0 ? ch.ToString().ToUpper() : ch.ToString().ToLower());
-
-
-            //var result = stringList
-            //    .Select((c, i) => new { c, i })
-            //    .Where(x => x.c == ch)
-            //    .Skip(1)
-            //    .FirstOrDefault();
-            //    }
-
-            //return result != null ? result.i : -1;
-            //        
-            //indicesOfThisChar.Add(c);
-
-            //if (numberOfAppearances > 1)
-            //{
-            //    foreach (var charOfThisIndex in charsOfThisIndex)
-            //    {
-            //        //stringBuilder.Append(stringList.IndexOf(charOfThisIndex,
-            //        //    charsOfThisIndex.IndexOf(charOfThisIndex) % 2 == 0 ? charOfThisIndex.ToString().ToUpper() : charOfThisIndex.ToString().ToLower()));
-
-
-            //        //stringBuilder.Append(charsOfThisIndex.IndexOf(charOfThisIndex) % 2 == 0 ? c.ToString().ToUpper() : c.ToString().ToLower());
-
-            //    }
-            //}
-
-
-            //if (numberOfAppearances > 1)
-            //{
-            //    foreach (var charOfThisIndex in charsOfThisIndex)
-            //    {
-
-            //    }
-            //}
-
-
-
-
-            //}
-
+            stringBuilder.Append(" ");
         }
 
         return stringBuilder.ToString();
